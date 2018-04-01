@@ -50,7 +50,7 @@ namespace NetSMOKE
 			
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Phase", 
 																OpenSMOKE::SINGLE_STRING, 
-																"Phase of reactor", 
+																"Phase of reactor (i.e. Gas, Mix, Solid)", 
 																true,
 																"None",
 																"None",
@@ -74,75 +74,69 @@ namespace NetSMOKE
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Temperature", 
 																OpenSMOKE::SINGLE_MEASURE, 
-																"Pressure of the reactor (i.e. 1 atm)", 
+																"Temperature of the reactor (i.e. 1000 K)", 
 																true,
-																"Temperature",
-																"UA",
+																"UA GlobalExchangeCoefficient",
+																"None",
 																"None") );
 			
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("UA", 
 																OpenSMOKE::SINGLE_MEASURE, 
 																"Global exchange coefficient multiplied for area (W/K)", 
 																true,
-																"Temperature",
-																"GlobalExchangeCoefficient",
+																"Temperature GlobalExchangeCoefficient",
+																"None",
 																"None") );
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("GlobalExchangeCoefficient", 
 																OpenSMOKE::SINGLE_MEASURE, 
 																"Global exchange coefficient (W/m2/K)", 
 																true,
-																"Temperature",
-																"UA",
+																"Temperature UA",
+																"Lenght Diameter",
 																"None") );
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("ResidenceTime", 
 																OpenSMOKE::SINGLE_MEASURE, 
 																"Residence time of the reactor (i.e. 1 s)", 
 																true,
-																"Volume",
-																"Diameter",
-																"Length") );
+																"Volume Length",
+																"None",
+																"None") );
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Volume", 
 																OpenSMOKE::SINGLE_MEASURE, 
-																"Volume of the reactor", 
+																"Volume of the reactor (i.e. 1 l)", 
 																true,
 																"ResidenceTime",
 																"None",
-																"None") );		
+																"Length Diameter") );		
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Diameter", 
 																OpenSMOKE::SINGLE_MEASURE, 
-																"Pressure of the reactor (i.e. 1 atm)", 
+																"Diameter of the reactor (i.e. 1 cm)", 
 																true,
 																"ResidenceTime",
-																"None",
-																"None") );
+																"Length",
+																"Volume") );
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Length", 
 																OpenSMOKE::SINGLE_MEASURE, 
-																"Pressure of the reactor (i.e. 1 atm)", 
+																"Length of the reactor (i.e. 10 cm)", 
 																true,
 																"ResidenceTime",
-																"None",
-																"None") );
+																"Diameter",
+																"Volume") );
 
-			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Inlet", 
+			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("InletStream", 
 																OpenSMOKE::SINGLE_INT, 
 																"ID number of the inlet stream", 
-																true,
-																"None",
-																"None",
-																"None") );																																																		
+																true) );																																																		
 
-			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Outlet", 
+			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("OutletStream", 
 																OpenSMOKE::SINGLE_INT, 
 																"ID number of the outlet stream", 
-																true,
-																"None",
-																"None",
-																"None") );	
+																true) );	
 		}
 	};
 
