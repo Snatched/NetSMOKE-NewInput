@@ -35,42 +35,27 @@ namespace NetSMOKE
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("@Reactor", 
 																OpenSMOKE::SINGLE_STRING, 
 																"Name and declaration of this reactor", 
-																true,
-																"None",
-																"None",
-																"None") );	
+																true) );	
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Type", 
 																OpenSMOKE::SINGLE_STRING, 
 																"Type of reactor (PSR or PFR)", 
-																true,
-																"None",
-																"None",
-																"None") );
+																true) );
 			
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Phase", 
 																OpenSMOKE::SINGLE_STRING, 
 																"Phase of reactor (i.e. Gas, Mix, Solid)", 
-																true,
-																"None",
-																"None",
-																"None") );	
+																true) );	
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Energy", 
 																OpenSMOKE::SINGLE_STRING, 
 																"Energy type of reactor (i.e. Isothermal, Adiabatic, HeatExchange)", 
-																true,
-																"None",
-																"None",
-																"None") );	
+																true) );	
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Pressure", 
 																OpenSMOKE::SINGLE_MEASURE, 
 																"Pressure of the reactor (i.e. 1 atm)", 
-																true,
-																"None",
-																"None",
-																"None") );	
+																true) );	
 
 			AddKeyWord( OpenSMOKE::OpenSMOKE_DictionaryKeyWord("Temperature", 
 																OpenSMOKE::SINGLE_MEASURE, 
@@ -148,6 +133,7 @@ namespace NetSMOKE
 	void GetReactorsDataFromDictionary(OpenSMOKE::OpenSMOKE_Dictionary& dictionary, std::vector<NetSMOKE::UnitInfo> &UnitsData)
 	{
 		
+		
 		NetSMOKE::UnitInfo TempUnit;
 
 		// Get name and type
@@ -162,7 +148,7 @@ namespace NetSMOKE
 			if (dictionary.CheckOption("Type") == true)
 			{
 				std::string type;
-				dictionary.ReadString("@Reactor", type);
+				dictionary.ReadString("Type", type);
 				TempUnit.tag = type;
 			}
 
@@ -299,6 +285,8 @@ namespace NetSMOKE
 			dictionary.ReadInt("Outlet", value);
 			TempUnit.outlets.push_back();
 		}
+
+		Units.push_back(TempUnit);
 
 	}
 
